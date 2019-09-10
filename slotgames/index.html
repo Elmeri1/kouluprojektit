@@ -10,20 +10,39 @@
         text-align: center;
         
     }
+    .raha {
+        text-align: center;
+        padding: 20px;
+    }
+    .lukko1 {
+
+    }
+
+    .btnLock {
+        color:green;
+    }
+
     </style>
 </head>
 <body>
 
-<button onclick="kierros()" id="nappi">Paina</button>
-<button onclick="lukitse(1)" id="lukko1">lukko1</button>
-<button onclick="lukitse(2)" id="lukko2">lukko2</button>
-<button onclick="lukitse(3)" id="lukko3">lukko3</button>
+<button onclick="kierros()" id="nappi" class="nappi">Paina</button>
+<button onclick="lukitse(1)" id="lukko1" class="nappi">lukko1</button>
+<button onclick="lukitse(2)" id="lukko2" class="nappi">lukko2</button>
+<button onclick="lukitse(3)" id="lukko3" class="nappi">lukko3</button>
+
+<button onclick="panos(1)">1€ panos</button>
+<button onclick="panos(2)">2€ panos</button>
+<button onclick="panos(3)">3€ panos</button>
+
 
 <div class="slotit">
 <span id="slot1"></span>
 <span id="slot2"></span>
 <span id="slot3"></span>
 <span id="info"></span>
+</div>
+<div class="raha">
 <span id="raha"></span>
 </div>
 <script src="index.js"></script>
