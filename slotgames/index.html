@@ -19,22 +19,44 @@
     }
 
     .btnLock {
-        color:green;
+        color:black;
+        background-color: green;
+    }
+    .panosLock {
+        color:black;
+        background-color: green;
+    }
+    .lukot {
+        text-align: center;
+        padding: 10px;
+        position: absolute;
+        left: 545px;
+        top: 200px;
+    }
+    .panokset {
+        text-align: center;
+        padding: 20px;
+    }
+    .pelaa {
+        text-align: center;
     }
 
     </style>
 </head>
+<div class="pelaa">
+    <button onclick="kierros()" id="nappi" class="nappi">Paina</button>
+</div>
 <body>
-
-<button onclick="kierros()" id="nappi" class="nappi">Paina</button>
+<div class="lukot">
 <button onclick="lukitse(1)" id="lukko1" class="nappi">lukko1</button>
 <button onclick="lukitse(2)" id="lukko2" class="nappi">lukko2</button>
 <button onclick="lukitse(3)" id="lukko3" class="nappi">lukko3</button>
-
-<button onclick="panos(1)">1€ panos</button>
-<button onclick="panos(2)">2€ panos</button>
-<button onclick="panos(3)">3€ panos</button>
-
+</div>
+<div class="panokset">
+<button onclick="asetaPanos(1)" id="panos1">1€ panos</button>
+<button onclick="asetaPanos(2)" id="panos2">2€ panos</button>
+<button onclick="asetaPanos(3)" id="panos3">3€ panos</button>
+</div>
 
 <div class="slotit">
 <span id="slot1"></span>

@@ -1,5 +1,5 @@
 
-var n1, n2, n3;
+// var n1, n2, n3;
 var rahat = 100;
 // var slot3 = 0;
 // var slot2 = 0;
@@ -10,54 +10,43 @@ var n3 = 0;
 var lukko1 = 0;
 var lukko2 = 0;
 var lukko3 = 0;
+var panos = 1;
 
 var saa_lukita = false;
 
 // var info = document.getElementById('info');
 
-var button = document.querySelector('nappi');
+// var button = document.querySelector('nappi');
 
-function onclick() {
-    // lukko1,lukko2,lukko3.onclick = document.getElementById("lukko1, lukko2, lukko3").style.color = "red";
+// function onclick() {
+//     // lukko1,lukko2,lukko3.onclick = document.getElementById("lukko1, lukko2, lukko3").style.color = "red";
    
-}
+// }
 
-function panos(p) {
-    if (p == 1) {
-        rahat = rahat - 1;
-    } else {
-
-    }
-
-    if (p == 2) {
-        rahat = rahat - 2;
-    } else {
-
-    }
-
-    if (p == 3) {
-        rahat = rahat - 3;
-    } else {
-        
-    }
-
+function asetaPanos(p) {
+    panos = p;
+    update();
 }
 
 
 function slot() {
-    return Math.floor(Math.random() * 7);
+    return Math.floor(Math.random() * 2);
 }
 
 function voitto(slot1, slot2, slot3) {
     if (slot1 == slot2 && slot2 == slot3) {
         rahat = rahat + 5;
     }
+    
+    // if (n1 == 1 || n2 == 1 || n3 == 1) {
+    //     rahat = rahat + 200;
+    // }
 }
 
 function kierros() {
 
-    // rahat = rahat - 1;
-    panos()
+    rahat = rahat - panos;
+    // panos()
 
     if (lukko1 == 0) {
         n1 = slot();
@@ -180,6 +169,27 @@ function update() {
         document.getElementById("lukko3").disabled = true;
     } else {
         document.getElementById("lukko3").disabled = false;
+    }
+
+    if (panos == 1) {
+        document.getElementById("panos1").classList.add("panosLock");
+    } else {
+        document.getElementById("panos1").classList.remove("panosLock");
+
+    }
+
+    if (panos == 2) {
+        document.getElementById("panos2").classList.add("panosLock");
+    } else {
+        document.getElementById("panos2").classList.remove("panosLock");
+
+    }
+
+    if (panos == 3) {
+        document.getElementById("panos3").classList.add("panosLock");
+    } else {
+        document.getElementById("panos3").classList.remove("panosLock");
+
     }
 
 }
