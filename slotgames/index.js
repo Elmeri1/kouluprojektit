@@ -10,7 +10,7 @@ var n3 = 0;
 var lukko1 = 0;
 var lukko2 = 0;
 var lukko3 = 0;
-var panos = 1;
+var panos = 0;
 
 var saa_lukita = false;
 
@@ -25,12 +25,17 @@ var saa_lukita = false;
 
 function asetaPanos(p) {
     panos = p;
+    // update();
+    // if (panos == 0) {
+    //      document.getElementById("nappi").disabled = true;
+    // }
     update();
+
 }
 
 
 function slot() {
-    return Math.floor(Math.random() * 2);
+    return Math.floor(Math.random() * 3);
 }
 
 function voitto(slot1, slot2, slot3) {
@@ -44,6 +49,11 @@ function voitto(slot1, slot2, slot3) {
 }
 
 function kierros() {
+
+    // if (panos = 0) {
+    //     document.getElementById("nappi").disabled = true;
+
+    // }
 
     rahat = rahat - panos;
     // panos()
@@ -70,7 +80,7 @@ function kierros() {
         return;
     }
 
-    if (lukko1 == 1 || lukko2 == 1 || lukko3 ==1) {
+    if (lukko1 == 1 || lukko2 == 1 || lukko3 == 1) {
         
         saa_lukita = false;
         lukko1 = lukko2 = lukko3 = 0;
@@ -190,6 +200,22 @@ function update() {
     } else {
         document.getElementById("panos3").classList.remove("panosLock");
 
+    }
+
+    if (panos == 0) {
+        document.getElementById("nappi").disabled = true;
+    } else {
+        document.getElementById("nappi").disabled = false;
+    }
+
+    if (lukko1 == 1 || lukko2 == 1 || lukko3 == 1) {
+        document.getElementById("panos1").disabled = true;
+        document.getElementById("panos2").disabled = true;
+        document.getElementById("panos3").disabled = true;
+    } else {
+        document.getElementById("panos1").disabled = false;
+        document.getElementById("panos2").disabled = false;
+        document.getElementById("panos3").disabled = false;
     }
 
 }
