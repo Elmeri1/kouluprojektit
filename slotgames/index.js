@@ -11,6 +11,7 @@ var lukko1 = 0;
 var lukko2 = 0;
 var lukko3 = 0;
 var panos = 0;
+var blabla = 0;
 
 var saa_lukita = false;
 
@@ -39,9 +40,16 @@ function slot() {
 }
 
 function voitto(slot1, slot2, slot3) {
-    if (slot1 == slot2 && slot2 == slot3) {
+    if (slot1 == slot2 && slot2 == slot3 && panos == 1) {
         rahat = rahat + 5;
+    } else if (slot1 == slot2 && slot2 == slot3 && panos == 2) {
+        rahat = rahat + 10;
+    } else if (slot1 == slot2 && slot2 == slot3 && panos == 3) {
+        rahat = rahat + 15;
+    } else {
+        
     }
+
     
     // if (n1 == 1 || n2 == 1 || n3 == 1) {
     //     rahat = rahat + 200;
@@ -217,5 +225,10 @@ function update() {
         document.getElementById("panos2").disabled = false;
         document.getElementById("panos3").disabled = false;
     }
+
+    // if (p = 3) {
+    //     rahat = rahat - 3;
+
+    // }
 
 }
