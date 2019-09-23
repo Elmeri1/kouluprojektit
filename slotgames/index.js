@@ -1,6 +1,6 @@
 
 // var n1, n2, n3;
-var rahat = 100;
+var rahat = 10;
 // var slot3 = 0;
 // var slot2 = 0;
 // var slot1 = 0;
@@ -12,6 +12,13 @@ var lukko2 = 0;
 var lukko3 = 0;
 var panos = 0;
 var blabla = 0;
+var images = [
+    "kirsikka.png",
+    "banaani.png",
+    "sitruuna.png",
+    "seiska.png"];
+
+// var kirsigga = document.getElementById("");
 
 var saa_lukita = false;
 
@@ -50,7 +57,6 @@ function voitto(slot1, slot2, slot3) {
         
     }
 
-    
     // if (n1 == 1 || n2 == 1 || n3 == 1) {
     //     rahat = rahat + 200;
     // }
@@ -62,6 +68,14 @@ function kierros() {
     //     document.getElementById("nappi").disabled = true;
 
     // }
+
+    if (rahat < panos) {
+        return;
+    } else if (rahat < 0) {
+        return;
+    } else {
+        
+    }
 
     rahat = rahat - panos;
     // panos()
@@ -84,9 +98,15 @@ function kierros() {
         // lukko3 = 0;
     }
 
-    if (rahat < 1) {
-        return;
-    }
+
+
+    // if (n1 = 1) {
+    //     document.getElementById("slot1") = kirsigga.png
+    // }
+
+    // if (rahat < 1) {
+    //     return;
+    // }
 
     if (lukko1 == 1 || lukko2 == 1 || lukko3 == 1) {
         
@@ -144,12 +164,20 @@ function lukitse(s) {
 
 }
 
+
 function update() {
 
     // update slots
     document.getElementById("slot1").innerHTML = n1;
     document.getElementById("slot2").innerHTML = n2;
     document.getElementById("slot3").innerHTML = n3;
+
+    document.getElementById("img1").src = "img/" + images[n1];
+    document.getElementById("img2").src = "img/" + images[n2];
+    document.getElementById("img3").src = "img/" + images[n3];
+
+
+
 
     document.getElementById("raha").innerHTML = rahat;
 
