@@ -1,6 +1,6 @@
 
 // var n1, n2, n3;
-var rahat = 10;
+var rahat = 99;
 // var slot3 = 0;
 // var slot2 = 0;
 // var slot1 = 0;
@@ -16,7 +16,8 @@ var images = [
     "kirsikka.png",
     "banaani.png",
     "sitruuna.png",
-    "seiska.png"];
+    "seiska.png",
+    "meloni2.png"];
 
 // var kirsigga = document.getElementById("");
 
@@ -43,18 +44,20 @@ function asetaPanos(p) {
 
 
 function slot() {
-    return Math.floor(Math.random() * 3);
+    return Math.floor(Math.random() * 5);
 }
 
 function voitto(slot1, slot2, slot3) {
-    if (slot1 == slot2 && slot2 == slot3 && panos == 1) {
-        rahat = rahat + 5;
-    } else if (slot1 == slot2 && slot2 == slot3 && panos == 2) {
-        rahat = rahat + 10;
-    } else if (slot1 == slot2 && slot2 == slot3 && panos == 3) {
-        rahat = rahat + 15;
+    if (slot1 == slot2 && slot2 == slot3) {
+        if (slot1 == 3) {
+            rahat = rahat + 50;
+        } else if(slot1 == 2) {
+            rahat = rahat + 4;
+        } else if (slot1 = 1) {
+            rahat = rahat + 2;
+        }
     } else {
-        
+        console.log("Ei voittoa!");
     }
 
     // if (n1 == 1 || n2 == 1 || n3 == 1) {
@@ -168,9 +171,9 @@ function lukitse(s) {
 function update() {
 
     // update slots
-    document.getElementById("slot1").innerHTML = n1;
-    document.getElementById("slot2").innerHTML = n2;
-    document.getElementById("slot3").innerHTML = n3;
+    // document.getElementById("slot1").innerHTML = n1;
+    // document.getElementById("slot2").innerHTML = n2;
+    // document.getElementById("slot3").innerHTML = n3;
 
     document.getElementById("img1").src = "img/" + images[n1];
     document.getElementById("img2").src = "img/" + images[n2];
@@ -244,15 +247,15 @@ function update() {
         document.getElementById("nappi").disabled = false;
     }
 
-    if (lukko1 == 1 || lukko2 == 1 || lukko3 == 1) {
-        document.getElementById("panos1").disabled = true;
-        document.getElementById("panos2").disabled = true;
-        document.getElementById("panos3").disabled = true;
-    } else {
-        document.getElementById("panos1").disabled = false;
-        document.getElementById("panos2").disabled = false;
-        document.getElementById("panos3").disabled = false;
-    }
+    // if (lukko1 == 1 || lukko2 == 1 || lukko3 == 1) {
+    //     document.getElementById("panos1").disabled = true;
+    //     document.getElementById("panos2").disabled = true;
+    //     document.getElementById("panos3").disabled = true;
+    // } else {
+    //     document.getElementById("panos1").disabled = false;
+    //     document.getElementById("panos2").disabled = false;
+    //     document.getElementById("panos3").disabled = false;
+    // }
 
     // if (p = 3) {
     //     rahat = rahat - 3;
