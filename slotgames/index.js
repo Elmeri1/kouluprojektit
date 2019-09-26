@@ -49,12 +49,16 @@ function slot() {
 
 function voitto(slot1, slot2, slot3) {
     if (slot1 == slot2 && slot2 == slot3) {
-        if (slot1 == 3) {
+        if (slot1 == 4) {
+            rahat = rahat + 20;
+        } else if(slot1 == 3) {
             rahat = rahat + 50;
-        } else if(slot1 == 2) {
-            rahat = rahat + 4;
-        } else if (slot1 = 1) {
+        } else if (slot1 = 2) {
+            rahat = rahat + 5;
+        } else if (slot1 == 1) {
             rahat = rahat + 2;
+        } else if (slot1 == 0) {
+            rahat = rahat + 1;
         }
     } else {
         console.log("Ei voittoa!");

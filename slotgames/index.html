@@ -3,24 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="X-UA-Compatible" content="width=device-width, initial-scale=1.0" name="viewport">
     <title>Document</title>
     <style>
     body {
         background-image: url("img/rantaHD.jpg");
         background-size: 100%;
+        background-repeat: no-repeat;
+        box-sizing: border-box;
     }
 
-    .slotit {
+    .container {
+        position: relative;
         text-align: center;
+        border: 1px solid red;
+        max-width: 1200px;
+        margin: 100px auto 0 auto;
         
     }
+
+    .slotit img {
+        width: 20%;
+
+    }
     .raha {
-        text-align: center;
-        padding: 20px;
         position: absolute;
-        top: 300px;
-        left: 600px;
+        bottom: 0;
+        right: 50px;
+        padding: 20px;
         font-family: 'digital-7';
         font-size: 40px;
         background-color: gold;
@@ -41,51 +51,54 @@
         color:black;
         background-color: green;
     }
-    .lukot {
-        text-align: center;
+    .lukot button {
         padding: 10px;
-        position: absolute;
-        left: 545px;
-        top: 200px;
+        width: 20%;
     }
-    .panokset {
-        text-align: center;
+    .panokset button {
+        width: 20%;
         padding: 20px;
     }
-    .pelaa {
-        text-align: center;
+    .pelaa button {
+        width: 100px;
+        height: 50px;
     }
 
     </style>
 </head>
 <body onload="update()">
-    <div class="pelaa">
-        <button onclick="kierros()" id="nappi" class="nappi">Paina</button>
-    </div>
+    
+<div class="container">
 
-    <div class="lukot">
-    <button onclick="lukitse(1)" id="lukko1" class="nappi">lukko1</button>
-    <button onclick="lukitse(2)" id="lukko2" class="nappi">lukko2</button>
-    <button onclick="lukitse(3)" id="lukko3" class="nappi">lukko3</button>
-    </div>
     <div class="panokset">
-    <button onclick="asetaPanos(1)" id="panos1">1€ panos</button>
-    <button onclick="asetaPanos(2)" id="panos2">2€ panos</button>
-    <button onclick="asetaPanos(3)" id="panos3">3€ panos</button>
+        <button onclick="asetaPanos(1)" id="panos1">1€ panos</button>
+        <button onclick="asetaPanos(2)" id="panos2">2€ panos</button>
+        <button onclick="asetaPanos(3)" id="panos3">3€ panos</button>
     </div>
 
     <div class="slotit">
-    <span id="slot1"></span>
-    <span id="slot2"></span>
-    <span id="slot3"></span>
-    <span id="info"></span>
-    <img id="img1" src="img/kirsikka.png" alt="" height="120">
-    <img id="img2" src="img/banaani.png" alt="" height="120">
-    <img id="img3" src="img/sitruuna.png" alt="" height="120">
+    
+        <img id="img1" src="img/kirsikka.png" alt="">
+        <img id="img2" src="img/banaani.png" alt="">
+        <img id="img3" src="img/sitruuna.png" alt="">
     </div>
+
+
+    <div class="lukot">
+        <button onclick="lukitse(1)" id="lukko1" class="nappi">lukko1</button>
+        <button onclick="lukitse(2)" id="lukko2" class="nappi">lukko2</button>
+        <button onclick="lukitse(3)" id="lukko3" class="nappi">lukko3</button>
+    </div>
+
+    <div class="pelaa">
+        <button onclick="kierros()" id="nappi" class="nappi">Pelaa</button>
+    </div>
+
     <div class="raha">
-    <span id="raha"></span>
+        <span id="raha"></span>
     </div>
+
+</div>
     <script src="index.js"></script>
 </body>
 </html>
